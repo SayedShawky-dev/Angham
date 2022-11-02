@@ -13,6 +13,23 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final player = AudioPlayer();
 
+  Expanded musicPlayer(){
+    return Expanded(
+
+      child: ElevatedButton(onPressed: ( )  {
+        player.setSource(AssetSource('music-1.mp3'));
+        print('Testing');
+      },
+          child: Row(
+            children: [
+              Icon(Icons.music_note),
+              Text('Music Name',style: TextStyle(fontSize: 25, color: Colors.red),),
+            ],
+
+          )),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,17 +40,12 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Column(
         children: [
-          ElevatedButton(onPressed: ( ){
-            player.setSource(AssetSource('music-1.mp3'));
-            print('Testing');
-          },
-              child: Row(
-                children: [
-                  Icon(Icons.music_note),
-                  Text('Music Name',style: TextStyle(fontSize: 25),)
-                ],
-
-          )),
+          musicPlayer(),
+          musicPlayer(),
+          musicPlayer(),
+          musicPlayer(),
+          musicPlayer(),
+          musicPlayer(),
 
 
 
